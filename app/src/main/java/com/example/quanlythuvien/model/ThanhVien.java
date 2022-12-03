@@ -1,11 +1,15 @@
 package com.example.quanlythuvien.model;
 
-public class ThanhVien {
+import java.io.Serializable;
+
+public class ThanhVien implements Serializable {
 
     private String taiKhoan;
     private String password;
     private String hoten;
     private String namSinh;
+
+    public ThanhVien(){}
 
     public ThanhVien(String taiKhoan, String password, String hoten, String namSinh) {
         this.taiKhoan = taiKhoan;

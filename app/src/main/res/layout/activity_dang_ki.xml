@@ -22,8 +22,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:textColor="@color/teal_700"
                 android:text="Đăng kí thành viên"
+                android:textColor="@color/teal_700"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -125,10 +125,10 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="100dp"
-                android:text="Đăng kí"
                 android:background="@drawable/custom_ql"
-                android:textColor="@color/white"
-                android:textAllCaps="false" />
+                android:text="Đăng kí"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 

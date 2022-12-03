@@ -13,8 +13,9 @@ import com.example.quanlythuvien.R;
 import com.example.quanlythuvien.databinding.ActivityThanhVienLoginBinding;
 import com.example.quanlythuvien.model.ThanhVien;
 import com.example.quanlythuvien.sqlite.SQLiteHelper;
-import com.example.quanlythuvien.ui.thanh_vien.MainActivity;
+import com.example.quanlythuvien.ui.thanh_vien.ThanhVienActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ThanhVienLoginActivity extends AppCompatActivity {
@@ -48,7 +49,9 @@ public class ThanhVienLoginActivity extends AppCompatActivity {
         String passWord = binding.edMatKhau.getText().toString().trim();
         for (int i=0;i<thanhVienArrayList.size();i++){
             if (userName.equals(thanhVienArrayList.get(i).getTaiKhoan()) && passWord.equals(thanhVienArrayList.get(i).getPassword())){
-                startActivity(new Intent(ThanhVienLoginActivity.this, MainActivity.class));
+                Intent intent = new Intent(ThanhVienLoginActivity.this, ThanhVienActivity.class);
+                intent.putExtra("thanhvien", (Serializable) thanhVienArrayList.get(i));
+                startActivity(intent);
                 Toast.makeText(this, "Đăng nhập thành công !!", Toast.LENGTH_SHORT).show();
             }else {
                 Toast.makeText(this, "Tài khoản hoặc mật khẩu không chính xác !", Toast.LENGTH_SHORT).show();

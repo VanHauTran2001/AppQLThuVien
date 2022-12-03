@@ -1,20 +1,27 @@
 package com.example.quanlythuvien.model;
 
-public class Sach {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Sach implements Serializable, Parcelable {
 
     private int maSach;
     private int maLoai;
     private String tenSach;
     private String tenTG;
-    private double giaThue;
+    private int giaThue;
     private int status;
+
+    public Sach(){}
 
     public Sach(
             int maSach,
             int maLoai,
             String tenSach,
             String tenTG,
-            double giaThue,
+            int giaThue,
             int status
     ) {
         this.maSach = maSach;
@@ -24,6 +31,27 @@ public class Sach {
         this.giaThue = giaThue;
         this.status = status;
     }
+
+    protected Sach(Parcel in) {
+        maSach = in.readInt();
+        maLoai = in.readInt();
+        tenSach = in.readString();
+        tenTG = in.readString();
+        giaThue = in.readInt();
+        status = in.readInt();
+    }
+
+    public static final Creator<Sach> CREATOR = new Creator<Sach>() {
+        @Override
+        public Sach createFromParcel(Parcel in) {
+            return new Sach(in);
+        }
+
+        @Override
+        public Sach[] newArray(int size) {
+            return new Sach[size];
+        }
+    };
 
     public int getMaSach() {
         return maSach;
@@ -57,11 +85,11 @@ public class Sach {
         this.tenTG = tenTG;
     }
 
-    public double getGiaThue() {
+    public int getGiaThue() {
         return giaThue;
     }
 
-    public void setGiaThue(double giaThue) {
+    public void setGiaThue(int giaThue) {
         this.giaThue = giaThue;
     }
 
@@ -71,5 +99,20 @@ public class Sach {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(maSach);
+        parcel.writeInt(maLoai);
+        parcel.writeString(tenSach);
+        parcel.writeString(tenTG);
+        parcel.writeInt(giaThue);
+        parcel.writeInt(status);
     }
 }

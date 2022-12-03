@@ -61,5 +61,12 @@ public class LoginActivity extends AppCompatActivity {
                 "TenTG NVARCHAR(100)," +
                 "GiaThue INTEGER," +
                 "status INTEGER)");
+        sqLiteHelper.QueryData("CREATE TABLE IF NOT EXISTS PhieuMuon(MaPhieu INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "MaTV NVARCHAR(100)," +
+                "MaSach INTEGER," +
+                "MaTT NVARCHAR(100)," +
+                "NgayThue VARCHAR(100)," +
+                "NgayTra VARCHAR(100)," +
+                "GiaThue INTEGER)");
     }
 }

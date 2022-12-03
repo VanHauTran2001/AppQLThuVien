@@ -1,33 +1,24 @@
-package com.example.quanlythuvien.ui.thu_thu.ql_sach;
+package com.example.quanlythuvien.ui.thanh_vien;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.quanlythuvien.R;
-import com.example.quanlythuvien.databinding.ItemSachBinding;
+import com.example.quanlythuvien.databinding.ItemSachThanhVienBinding;
 import com.example.quanlythuvien.model.Sach;
 
-public class SachAdapter extends RecyclerView.Adapter<SachAdapter.SachViewHolder>{
-    private ISach iSach;
-    private Context context;
+public class SachThanhVienAdapter extends RecyclerView.Adapter<SachThanhVienAdapter.SachViewHolder>{
+    private ISachThanhVien iSach;
 
-    public SachAdapter(ISach iSach, Context context) {
+    public SachThanhVienAdapter(ISachThanhVien iSach) {
         this.iSach = iSach;
-        this.context = context;
     }
 
     @NonNull
     @Override
     public SachViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemSachBinding binding = ItemSachBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+        ItemSachThanhVienBinding binding = ItemSachThanhVienBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
         return new SachViewHolder(binding);
     }
 
@@ -43,18 +34,11 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.SachViewHolder
             holder.binding.txtStatus.setText("Còn");
         }else {
             holder.binding.txtStatus.setText("Hết");
-            holder.binding.txtStatus.setTextColor(ContextCompat.getColor(context,R.color.red));
         }
-        holder.binding.imgEdit.setOnClickListener(new View.OnClickListener() {
+        holder.binding.btnThueSach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iSach.onClickEdit(position);
-            }
-        });
-        holder.binding.imgDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                iSach.onClickDelete(position);
+                iSach.onCLickMuonSach(position);
             }
         });
     }
@@ -64,15 +48,14 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.SachViewHolder
         return iSach.getCount();
     }
 
-    interface ISach{
+    interface ISachThanhVien{
         int getCount();
         Sach getListSach(int position);
-        void onClickDelete(int position);
-        void onClickEdit(int position);
+        void onCLickMuonSach(int position);
     }
     public class SachViewHolder extends RecyclerView.ViewHolder{
-        private ItemSachBinding binding;
-        public SachViewHolder(@NonNull ItemSachBinding binding) {
+        private ItemSachThanhVienBinding binding;
+        public SachViewHolder(@NonNull ItemSachThanhVienBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

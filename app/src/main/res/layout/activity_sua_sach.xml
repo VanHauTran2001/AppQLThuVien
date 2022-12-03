@@ -6,28 +6,17 @@
     <data>
 
     </data>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.thu_thu.them_sach.ThemSachActivity">
-
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
+        tools:context=".ui.thu_thu.them_sach.SuaSachActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:textColor="@color/teal_700"
-            android:text="Thêm sách"
+            android:text="Sửa sách"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -122,18 +111,18 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnThemSach"
+            android:id="@+id/btnSuaSach"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="100dp"
-            android:text="Thêm"
             android:background="@drawable/custom_ql"
-            android:textSize="18dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:padding="15dp"
-            android:textAllCaps="false" />
+            android:text="Sửa"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </layout>

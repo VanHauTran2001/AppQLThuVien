@@ -3,6 +3,7 @@ package com.example.quanlythuvien.ui.thu_thu.ql_theloai;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import com.example.quanlythuvien.R;
 import com.example.quanlythuvien.databinding.ActivityQuanLyTheLoaiBinding;
 import com.example.quanlythuvien.sqlite.SQLiteHelper;
+import com.example.quanlythuvien.ui.login.LoginActivity;
+import com.example.quanlythuvien.ui.thu_thu.ThuThuActivity;
 
 public class QuanLyTheLoaiActivity extends AppCompatActivity {
 
@@ -42,6 +45,13 @@ public class QuanLyTheLoaiActivity extends AppCompatActivity {
                 }else {
                     Toast.makeText(QuanLyTheLoaiActivity.this, "Đã tồn tại !", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        binding.imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QuanLyTheLoaiActivity.this, ThuThuActivity.class);
+                startActivity(intent);
             }
         });
     }

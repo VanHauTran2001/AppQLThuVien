@@ -3,34 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.thu_thu.them_sach.ThemSachActivity">
-
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
+        tools:context=".ui.thanh_vien.xac_nhan_muon_sach.MuonSachActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:text="Xác nhận mượn sách"
             android:textColor="@color/teal_700"
-            android:text="Thêm sách"
             android:textSize="30dp"
             android:textStyle="bold" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,15 +29,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Tên sách : "
+                    android:text="Tên TV : "
                     android:textSize="18dp"
                     android:textColor="@color/teal_700"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/edTenTheSach"
+                <TextView
+                    android:id="@+id/tvTenTV"
+                    android:text="Huy Tu"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -62,37 +50,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+                android:layout_marginTop="15dp">
 
                 <TextView
-                    android:layout_width="120dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Thể loại : "
-                    android:textSize="18dp"
-                    android:textColor="@color/teal_700"
-                    android:textStyle="bold" />
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:text="Tên tác giả : "
+                    android:text="Tên sách : "
                     android:textSize="18dp"
                     android:textColor="@color/teal_700"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/edTenTacGia"
+                <TextView
+                    android:id="@+id/tvTenSach"
+                    android:text="Làm sao để học giỏi ?"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -101,7 +73,56 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày mượn : "
+                    android:textSize="18dp"
+                    android:textColor="@color/teal_700"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNgayMuon"
+                    android:text="06/09/2022"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày trả : "
+                    android:textSize="18dp"
+                    android:textColor="@color/teal_700"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNgayTra"
+                    android:text="dd/mm/yy"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
 
                 <TextView
                     android:layout_width="120dp"
@@ -111,29 +132,28 @@
                     android:textColor="@color/teal_700"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/edGiaTien"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/tvTongTien"
+                    android:text="50000đ"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:inputType="number"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnThemSach"
+            android:id="@+id/btnDangKi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="100dp"
-            android:text="Thêm"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/custom_ql"
-            android:textSize="18dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:padding="15dp"
-            android:textAllCaps="false" />
+            android:text="Đăng kí"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
     </RelativeLayout>
 </layout>

@@ -14,7 +14,22 @@
         android:theme="@style/Theme.QuanLyThuVien"
         tools:targetApi="31">
         <activity
-                android:name=".ui.login.ThanhVienLoginActivity"
+            android:name=".ui.thu_thu.sach_sap_het_han.SachSapHetHanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.thu_thu.SachQuaHanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.thanh_vien.xac_nhan_muon_sach.MuonSachActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.thanh_vien.ThanhVienActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.thu_thu.sua_sach.SuaSachActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.ThanhVienLoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.thu_thu.them_sach.ThemSachActivity"
