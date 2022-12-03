@@ -1,5 +1,6 @@
 package com.example.quanlythuvien.ui.thu_thu.ql_sach;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -32,7 +33,7 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.SachViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SachViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SachViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Sach sach = iSach.getListSach(position);
         holder.binding.txtTenSach.setText("Tên sách : " + sach.getTenSach());
         holder.binding.txtTacGia.setText("Tác giả : " + sach.getTenTG());
@@ -43,7 +44,6 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.SachViewHolder
             holder.binding.txtStatus.setText("Còn");
         }else {
             holder.binding.txtStatus.setText("Hết");
-            holder.binding.txtStatus.setTextColor(ContextCompat.getColor(context,R.color.red));
         }
         holder.binding.imgEdit.setOnClickListener(new View.OnClickListener() {
             @Override

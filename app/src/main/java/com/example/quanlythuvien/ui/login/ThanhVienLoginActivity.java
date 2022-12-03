@@ -22,6 +22,7 @@ public class ThanhVienLoginActivity extends AppCompatActivity {
     private ActivityThanhVienLoginBinding binding;
     private ArrayList<ThanhVien> thanhVienArrayList;
     private SQLiteHelper sqLiteHelper;
+    boolean check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,17 +46,24 @@ public class ThanhVienLoginActivity extends AppCompatActivity {
     }
 
     private void login() {
+
         String userName = binding.edTaiKhoan.getText().toString().trim();
         String passWord = binding.edMatKhau.getText().toString().trim();
         for (int i=0;i<thanhVienArrayList.size();i++){
             if (userName.equals(thanhVienArrayList.get(i).getTaiKhoan()) && passWord.equals(thanhVienArrayList.get(i).getPassword())){
+                check = true;
                 Intent intent = new Intent(ThanhVienLoginActivity.this, ThanhVienActivity.class);
                 intent.putExtra("thanhvien", (Serializable) thanhVienArrayList.get(i));
                 startActivity(intent);
-                Toast.makeText(this, "Đăng nhập thành công !!", Toast.LENGTH_SHORT).show();
             }else {
-                Toast.makeText(this, "Tài khoản hoặc mật khẩu không chính xác !", Toast.LENGTH_SHORT).show();
+                check = false;
             }
+        }
+        if (check){
+            Toast.makeText(this, "Đăng nhập thành công !!", Toast.LENGTH_SHORT).show();
+        }
+        if (!check){
+            Toast.makeText(this, "Đăng nhập thất bại !!", Toast.LENGTH_SHORT).show();
         }
     }
 }
